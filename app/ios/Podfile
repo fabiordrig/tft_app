@@ -1,8 +1,8 @@
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-target 'tft_app' do
-  # Pods for tft_app
+target 'test' do
+  # Pods for test
   pod 'React', :path => '../node_modules/react-native/'
   pod 'React-Core', :path => '../node_modules/react-native/React'
   pod 'React-DevSupport', :path => '../node_modules/react-native/React'
@@ -27,7 +27,7 @@ target 'tft_app' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'tft_appTests' do
+  target 'testTests' do
     inherit! :search_paths
     # Pods for testing
   end
@@ -35,10 +35,10 @@ target 'tft_app' do
   use_native_modules!
 end
 
-target 'tft_app-tvOS' do
-  # Pods for tft_app-tvOS
+target 'test-tvOS' do
+  # Pods for test-tvOS
 
-  target 'tft_app-tvOSTests' do
+  target 'test-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

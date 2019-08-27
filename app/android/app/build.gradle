@@ -128,7 +128,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.tft_app"
+        applicationId "com.test"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
