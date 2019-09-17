@@ -23,6 +23,7 @@ import Darkin from '../assets/Items/Darkin.png';
 import DragonClaw from '../assets/Items/DragonClaw.png';
 
     //F
+
 import ForceofNature from '../assets/Items/Forceofnature.png';
 import FrozzenHeart from '../assets/Items/FrozzenHeart.png';
 
@@ -88,6 +89,7 @@ import Yuumi from '../assets/Items/Yuumi.png';
 import Zekesherald from '../assets/Items/Zekesherald.png';
 
 import Drag from '../scroll_items/testeClasse';
+
 
 export default function ScrollItems(){
     return(

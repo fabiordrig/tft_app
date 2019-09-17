@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import {View, TouchableOpacity, StyleSheet, Text, Image, FlatList} from 'react-native';
+
 import AsyncStorage from '@react-native-community/async-storage';
 
 import {listaCampeoes} from '../data/ListaCampeoes';
 
 import ScrollItems from '../scroll_items/ItemsScroll';
+
 import ScrollCampeoes from '../scroll_campeoes/CampeoesScroll';
 
 
@@ -63,6 +65,7 @@ export default function Main({navigation}){
                 </FlatList>
             </View>*/}
             <ScrollCampeoes />
+            </View>
 
             {/* Lista de Items*/}
             <ScrollItems />
