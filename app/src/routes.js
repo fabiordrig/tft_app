@@ -1,4 +1,6 @@
-import {createAppContainer, createSwitchNavigator, createBottomTabNavigator} from 'react-navigation';
+import {createAppContainer, createBottomTabNavigator, createSwitchNavigator} from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+
 
 import Login from './pages/Login';
 import Main from './pages/Main';
@@ -7,18 +9,24 @@ import Items from './pages/Items';
 import Builds from './pages/Builds';
 import Jogo from './pages/Jogo';
 
-export default createAppContainer(
-   // Iniciar = createSwitchNavigator({
-     //   Login,
-       // Main,
-    //}), 
+const Entrada = createStackNavigator({
+  Login: Login,
+});
 
-    createBottomTabNavigator({
-        Login,
-        Main,
-        Campeoes,
-        Items,
-        Builds,
-        Jogo
-    })
+const App =    createBottomTabNavigator({
+  Main : Main,
+  Campeoes : Campeoes,
+  Items : Items,
+  Builds : Builds,
+    Jogo : Jogo,
+  });
+
+export default createAppContainer(
+  createSwitchNavigator({
+       Login : Entrada,
+       Main: App,
+   }), 
+   {
+    initialRouteName: 'Login',
+  }
 );

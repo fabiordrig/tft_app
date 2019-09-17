@@ -7,6 +7,9 @@ import {listaCampeoes} from '../data/ListaCampeoes';
 
 import ScrollItems from '../scroll_items/ItemsScroll';
 
+import ScrollCampeoes from '../scroll_campeoes/CampeoesScroll';
+
+
 export default function Main({navigation}){
 
     //Serve para pegar os dados que o usuario colocar na tela de Login
@@ -48,6 +51,7 @@ export default function Main({navigation}){
         <View style={styles.container}>
             {/* Lista de Campeoes*/}
             <Text>Campeões</Text>
+            {/* Lista de Campeoes
             <View style={styles.listaCampeoes}>
                 <FlatList horizontal={true}
                 data={listaCampeoes}
@@ -59,6 +63,8 @@ export default function Main({navigation}){
                 }}
                 keyExtractor={(item, index) => item.name}>
                 </FlatList>
+            </View>*/}
+            <ScrollCampeoes />
             </View>
 
             {/* Lista de Items*/}

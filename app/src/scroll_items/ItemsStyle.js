@@ -5,8 +5,8 @@ export const ListaItems = styled.ScrollView.attrs({
     showsHorizontalScrollIndicator: false,
 })``;
 
-export const ItemCampeao = styled.View`
-    width: auto;
-    height: auto;
+export const Items = styled.View`
+    width: 75;
+    height: 100;
 `;
 
