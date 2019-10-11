@@ -1,6 +1,5 @@
 import React from 'react';
-
-import {Image, View, StyleSheet} from 'react-native';
+import {Image, View, StyleSheet, TouchableOpacity} from 'react-native';
 
 import {ListaItems, Items} from './ItemsStyle';
 
@@ -89,7 +88,16 @@ import Zekesherald from '../assets/Items/Zekesherald.png';
 
 import Drag from '../scroll_items/testeClasse';
 
+import {listaItems} from '../data/ListaItems';
+
 export default function ScrollItems(){
+
+    function teste(id){
+        var numero = id - 8;
+        
+        console.log(numero,BF);
+        console.log("Imagem");
+    }
     return(
         <ListaItems>
             <Items>
@@ -97,7 +105,9 @@ export default function ScrollItems(){
             </Items>
             {/* A */}
             <Items>
-                <Image  source={assassin} style={styles.imagem}/>
+                <TouchableOpacity onPress={teste(8)}>
+                    <Image  source={assassin} style={styles.imagem}/>
+                </TouchableOpacity>
             </Items>
 
             {/* B */}

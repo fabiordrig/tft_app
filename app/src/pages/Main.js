@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import {View, TouchableOpacity, StyleSheet, Text, Image, FlatList} from 'react-native';
+import {View, TouchableOpacity, StyleSheet, Text, Image, FlatList, ImageBackground, Button, Alert} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
 import {listaCampeoes} from '../data/ListaCampeoes';
 
 import ScrollItems from '../scroll_items/ItemsScroll';
 import ScrollCampeoes from '../scroll_campeoes/CampeoesScroll';
+import Classes from '../data/Classes';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 export default function Main({navigation}){
@@ -19,6 +21,7 @@ export default function Main({navigation}){
     }
 
     //Funcao para demostrar atributos dos campeoes
+    /*
     class HorizontalFlatListCampeao extends Component{
         render(){
             return (
@@ -44,34 +47,562 @@ export default function Main({navigation}){
             );
         }
     }
-
+    */
     return (
         <View style={styles.container}>
-            {/* Lista de Campeoes*/}
-            <Text>Campeões</Text>
-            {/* Lista de Campeoes
-            <View style={styles.listaCampeoes}>
-                <FlatList horizontal={true}
-                data={listaCampeoes}
-                renderItem={({item, index}) => {
-                    return(
-                        <HorizontalFlatListCampeao item={item} index={index} parentFlatList={this}>
-                        </HorizontalFlatListCampeao>
-                    );
-                }}
-                keyExtractor={(item, index) => item.name}>
-                </FlatList>
-            </View>*/}
-            <ScrollCampeoes />
+            <View style={styles.top}>
+                <Text style={styles.header}>SIMULADOR (WIP)</Text>
+            </View>
+            <View>
+                <Button
+                title="Vitória"
+                onPress={() => Alert.alert('Vitória')}
+                />
+                <Button
+                title="Derrota"
+                onPress={() => Alert.alert('Derrota')}
+                color="red"
+                />
+            </View>
+            <View style={styles.tableContainer}>
+                <ScrollView style={styles.scrollView}>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Assassin.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Silver.png')} classeImage={require('../assets/Classes/S-Assassin.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Assassin.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Blademaster.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Silver.png')} classeImage={require('../assets/Classes/S-Blademaster.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Blademaster.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Brawler.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Silver.png')} classeImage={require('../assets/Classes/S-Brawler.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Brawler.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Demon.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Silver.png')} classeImage={require('../assets/Classes/S-Demon.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Demon.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Dragon.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Dragon.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Dragon.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Elementalist.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Elementalist.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Elementalist.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Exile.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Exile.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Exile.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Glacial.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Silver.png')} classeImage={require('../assets/Classes/S-Glacial.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Glacial.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Guardian.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Guardian.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Guardian.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-GunSlinger.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Silver.png')} classeImage={require('../assets/Classes/S-GunSlinger.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-GunSlinger.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-HexTech.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-HexTech.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-HexTech.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Imperial.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Imperial.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Imperial.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Knight.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Silver.png')} classeImage={require('../assets/Classes/S-Knight.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Knight.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Ninja.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Ninja.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Ninja.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Nobles.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Nobles.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Nobles.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Phantom.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Phantom.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Phantom.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Pirates.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Pirates.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Pirates.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Ranger.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Ranger.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Ranger.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Robot.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Robot.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Robot.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-ShapeShifter.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-ShapeShifter.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-ShapeShifter.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Sorc.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Silver.png')} classeImage={require('../assets/Classes/S-Sorc.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Sorc.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Void.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Void.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Void.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Wild.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Wild.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Wild.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Yordle.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Yordle.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Yordle.png')} />
+                        </View>
+                    </View>
+                </ScrollView>
 
-            {/* Lista de Items*/}
-            <ScrollItems />
-
-            {/* Sair - Log Out*/}
-            <TouchableOpacity onPress={logOut} style={styles.logout}>
-                <Text>LogOut</Text>
-            </TouchableOpacity>
-        </View>);
+                <ScrollView style={styles.scrollView}>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Assassin.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Silver.png')} classeImage={require('../assets/Classes/S-Assassin.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Assassin.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Blademaster.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Silver.png')} classeImage={require('../assets/Classes/S-Blademaster.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Blademaster.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Brawler.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Silver.png')} classeImage={require('../assets/Classes/S-Brawler.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Brawler.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Demon.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Silver.png')} classeImage={require('../assets/Classes/S-Demon.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Demon.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Dragon.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Dragon.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Dragon.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Elementalist.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Elementalist.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Elementalist.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Exile.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Exile.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Exile.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Glacial.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Silver.png')} classeImage={require('../assets/Classes/S-Glacial.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Glacial.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Guardian.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Guardian.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Guardian.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-GunSlinger.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Silver.png')} classeImage={require('../assets/Classes/S-GunSlinger.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-GunSlinger.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-HexTech.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-HexTech.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-HexTech.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Imperial.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Imperial.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Imperial.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Knight.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Silver.png')} classeImage={require('../assets/Classes/S-Knight.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Knight.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Ninja.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Ninja.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Ninja.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Nobles.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Nobles.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Nobles.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Phantom.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Phantom.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Phantom.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Pirates.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Pirates.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Pirates.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Ranger.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Ranger.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Ranger.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Robot.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Robot.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Robot.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-ShapeShifter.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-ShapeShifter.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-ShapeShifter.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Sorc.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Silver.png')} classeImage={require('../assets/Classes/S-Sorc.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Sorc.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Void.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Void.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Void.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Wild.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Wild.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Wild.png')} />
+                        </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Bronze.png')} classeImage={require('../assets/Classes/S-Yordle.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Yordle.png')} />
+                        </View>
+                        <View style={styles.menuContainer}>
+                            <Classes molduraImage={require('../assets/Moldura/Gold.png')} classeImage={require('../assets/Classes/S-Yordle.png')} />
+                        </View>
+                        
+                    </View>
+                </ScrollView>
+            </View>
+        </View>
+        
+        );
 }
 
 const styles = StyleSheet.create({
@@ -86,6 +617,7 @@ const styles = StyleSheet.create({
         flex:1,
         alignItems:'center',
     },
+
     imagemCanpeoes:{
         flex:1,
         resizeMode:'stretch',
@@ -97,4 +629,41 @@ const styles = StyleSheet.create({
         backgroundColor:'grey',
         justifyContent:'center',
     },
+    top: {
+        height: '25%',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    header: {
+        color: '#fff',
+        fontSize: 28,
+        borderColor: '#fff',
+        borderWidth: 2,
+        padding: 20,
+        paddingLeft: 40,
+        paddingRight: 40
+    },
+    menuContainer: {
+        height: 50,
+        width: 50,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+    },
+    listContainer: {
+        height: '15%',
+        width: '100%',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+    },
+    scrollView: {
+        flex: 1,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        borderColor: '#fff',
+        borderWidth: 2,
+      },
+    tableContainer: {
+        flex:1,
+        flexDirection: 'row',
+    }
 });

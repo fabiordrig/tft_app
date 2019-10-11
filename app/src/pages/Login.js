@@ -26,7 +26,7 @@ export default function Login({navigation}){
     return (
     <View style={styles.container}>
         <Text >
-                IMAGEM
+                TFT
         </Text>
 
         <TextInput style={styles.input} 
