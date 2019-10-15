@@ -5,6 +5,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import {listaCampeoes} from '../data/ListaCampeoes';
 
 import ScrollItems from '../scroll_items/ItemsScroll';
+
 import ScrollCampeoes from '../scroll_campeoes/CampeoesScroll';
 import Classes from '../data/Classes';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -600,8 +601,7 @@ export default function Main({navigation}){
                     </View>
                 </ScrollView>
             </View>
-        </View>
-        
+        </View>       
         );
 }
 
